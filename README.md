@@ -19,11 +19,15 @@ Studied basic concept of mqtt protocol in order to utilize it into IoT project l
 
 ## Mqtt connection refused
 2022 07. 20: Found out mqtt connection problem
+
      1) Windows 방화벽 제거 후 재연결  →  실패
+
      2) Inbound rules로 1883 port를 open  →  실패
 
 2022 07. 25: window 방화벽 문제로 예상했으나 mac os에서도 같은 오류 발생 
+
 2022 07. 25: mac에서 연결 성공 (19시 25분)
+
 2022 07. 26: Solved. For more details →  [click][url2]
 
 [url2]: https://jaewonahn1234.tistory.com/36 
