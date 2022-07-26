@@ -45,8 +45,7 @@ c:\Users\jaewo\Desktop\IoT_Commuication\Arduino\build\sketch\mqtt.ino.cpp.o: \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\cores\esp8266/debug.h \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\variants\d1/pins_arduino.h \
  c:\users\jaewo\appdata\local\arduino15\packages\esp8266\hardware\esp8266\3.0.2\variants\generic\common.h \
- C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\libraries\ESP8266WiFi\src/ESP8266WiFi.h \
- C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\cores\esp8266/wl_definitions.h \
+ C:\Users\jaewo\Documents\Arduino\libraries\PubSubClient\src/PubSubClient.h \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\cores\esp8266/IPAddress.h \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\cores\esp8266/Printable.h \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2/tools/sdk/lwip2/include/lwip/init.h \
@@ -76,6 +75,11 @@ c:\Users\jaewo\Desktop\IoT_Commuication\Arduino\build\sketch\mqtt.ino.cpp.o: \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2/tools/sdk/lwip2/include/arch/cc.h \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2/tools/sdk/lwip2/include/lwip-git-hash.h \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2/tools/sdk/lwip2/include/lwip/debug.h \
+ C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\cores\esp8266/Client.h \
+ C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\cores\esp8266/Print.h \
+ C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\cores\esp8266/IPAddress.h \
+ C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\libraries\ESP8266WiFi\src/ESP8266WiFi.h \
+ C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\cores\esp8266/wl_definitions.h \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\libraries\ESP8266WiFi\src/ESP8266WiFiType.h \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2/tools/sdk/include/queue.h \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\libraries\ESP8266WiFi\src/ESP8266WiFiSTA.h \
@@ -93,9 +97,6 @@ c:\Users\jaewo\Desktop\IoT_Commuication\Arduino\build\sketch\mqtt.ino.cpp.o: \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\libraries\ESP8266WiFi\src/ESP8266WiFiAP.h \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\libraries\ESP8266WiFi\src/ESP8266WiFiScan.h \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\libraries\ESP8266WiFi\src/WiFiClient.h \
- C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\cores\esp8266/Client.h \
- C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\cores\esp8266/Print.h \
- C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\cores\esp8266/IPAddress.h \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\libraries\ESP8266WiFi\src/include/slist.h \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\libraries\ESP8266WiFi\src/WiFiServer.h \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\cores\esp8266/Server.h \
@@ -122,5 +123,4 @@ c:\Users\jaewo\Desktop\IoT_Commuication\Arduino\build\sketch\mqtt.ino.cpp.o: \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\libraries\ESP8266WiFi\src/BearSSLHelpers.h \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\cores\esp8266/FS.h \
  C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\libraries\ESP8266WiFi\src/WiFiServerSecureBearSSL.h \
- C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\libraries\ESP8266WiFi\src/WiFiClientSecure.h \
- C:\Users\jaewo\Documents\Arduino\libraries\PubSubClient\src/PubSubClient.h
+ C:\Users\jaewo\AppData\Local\Arduino15\packages\esp8266\hardware\esp8266\3.0.2\libraries\ESP8266WiFi\src/WiFiClientSecure.h

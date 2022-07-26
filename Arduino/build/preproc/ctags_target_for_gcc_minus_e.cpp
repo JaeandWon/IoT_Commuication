@@ -3,11 +3,11 @@
 # 3 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT\\mqtt.ino" 2
 
 // Update these with values suitable for your network.
-const char *ssid = "iptime108"; //커피?���??
-const char *password = "76070609"; // 00001245a
+const char *ssid = "jwip"; //
+const char *password = "01027628569"; // 00001245a
 
 //?��?��?�� mosquitto server address, clientname
-const char *mqtt_server = "192.168.0.59"; // ip
+const char *mqtt_server = "192.168.0.3"; // ip  172.16.101.62
 const char *clientName = "D1miniClientA";
 
 WiFiClient espClient;
@@ -44,6 +44,7 @@ void setup_wifi()
     Serial.println("WiFi connected");
     Serial.print("IP address: ");
     Serial.println(WiFi.localIP());
+    delay(500);
 }
 
 void callback(char *topic, byte *payload, unsigned int length)
