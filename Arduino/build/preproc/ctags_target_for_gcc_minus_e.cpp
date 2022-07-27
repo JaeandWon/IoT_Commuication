@@ -1,102 +1,27 @@
-# 1 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT\\mqtt.ino"
-# 2 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT\\mqtt.ino" 2
-# 3 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT\\mqtt.ino" 2
+# 1 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT_LED\\MQTT_LED.ino"
+# 2 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT_LED\\MQTT_LED.ino" 2
+# 3 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT_LED\\MQTT_LED.ino" 2
 
-// Update these with values suitable for your network.
-const char *ssid = "jwip"; //
-const char *password = "01027628569"; // 00001245a
-
-//?��?��?�� mosquitto server address, clientname
-const char *mqtt_server = "192.168.0.3"; // ip  172.16.101.62
-const char *clientName = "D1miniClientA";
+const char *ssid = "jwip"; // wifi name
+const char *password = "01027628569"; // wifi pw
+const char mqtt_server[] = "192.168.0.3"; // mqtt broker server
+const char clientName[] = "010830Client"; // 다름 이름이랑 중복되지 않도록 함
 
 WiFiClient espClient;
 PubSubClient client(espClient);
+long lastMsg = 0;
+char msg[50];
 
-unsigned long lastMsg = 0;
+int led = 14;
+int timeln = 1000;
 
+void setup_wifi();
+void callback(char *topic, byte *payload, unsigned int length);
+void reconnect();
 
-char msg[(50)];
-
-int value = 0;
-
-void setup_wifi()
-{
-    delay(1000);
-    // We start by connecting to a WiFi network
-    Serial.println();
-    Serial.print("Connecting to ");
-    Serial.println(ssid);
-
-    WiFi.mode(WIFI_STA);
-    WiFi.begin(ssid, password);
-
-    // Check the WiFi connection
-    while (WiFi.status() != WL_CONNECTED)
-    {
-        delay(500);
-        Serial.print(".");
-    }
-
-    randomSeed(micros());
-
-    Serial.println("");
-    Serial.println("WiFi connected");
-    Serial.print("IP address: ");
-    Serial.println(WiFi.localIP());
-    delay(500);
-}
-
-void callback(char *topic, byte *payload, unsigned int length)
-{
-    Serial.print("Message arrived [");
-    Serial.print(topic);
-    Serial.print("] ");
-    for (int i = 0; i < length; i++)
-    {
-        Serial.print((char)payload[i]);
-    }
-    Serial.println();
-
-    // Switch on the LED if an 1 was received as first character
-    if ((char)payload[0] == '1')
-    {
-        digitalWrite(14, 0x1);
-    }
-    else
-    {
-        digitalWrite(14, 0x0);
-    }
-}
-
-void reconnect()
-{
-    // Loop until we're reconnected
-    while (!client.connected())
-    {
-        Serial.print("Attempting MQTT connection...");
-        if (client.connect(clientName))
-        {
-            Serial.println("connected");
-            // Once connected, publish an announcement...
-            client.publish("outTopic", "hello world");
-            // ... and resubscribe
-            client.subscribe("inTopic");
-        }
-        else
-        {
-            Serial.print("failed, rc=");
-            Serial.print(client.state());
-            Serial.println(" try again in 5 seconds");
-            // Wait 5 seconds before retrying
-            delay(5000);
-        }
-    }
-}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void setup()
 {
-    pinMode(14, 0x01);
+    pinMode(led, 0x01);
     Serial.begin(115200);
     setup_wifi();
     client.setServer(mqtt_server, 1883);
@@ -109,16 +34,88 @@ void loop()
     {
         reconnect();
     }
+
     client.loop();
 
-    unsigned long now = millis();
-    if (now - lastMsg > 2000)
+    digitalWrite(led, 0x1);
+    delay(timeln);
+    digitalWrite(led, 0x0);
+    delay(timeln);
+}
+//
+//
+//
+//
+//
+void setup_wifi()
+{
+    delay(100);
+    Serial.println("MQTT_LED");
+    Serial.print("Connecting to ");
+    Serial.println(ssid);
+
+    WiFi.begin(ssid, password);
+
+    while (WiFi.status() != WL_CONNECTED)
     {
-        lastMsg = now;
-        ++value;
-        snprintf(msg, (50), "hello world #%ld", value);
-        Serial.print("Publish message: ");
-        Serial.println(msg);
-        client.publish("outTopic", msg);
+        delay(500);
+        Serial.print(".");
+    }
+
+    Serial.println("");
+    Serial.println("WiFi connected");
+    Serial.println("IP address:");
+    Serial.println(WiFi.localIP());
+}
+
+//통신에서 문자가 들어오면 이 함수의 payload 배열에 저장된다.
+void callback(char *topic, byte *payload, unsigned int length)
+{
+    Serial.print("Message arrived [");
+    Serial.print(topic);
+    Serial.println("]");
+
+    for (int i = 0; i < length; i++)
+    {
+        Serial.print((char)payload[i]);
+    }
+
+    Serial.println();
+
+    /*payload로 들어온 문자를 정수로 바꾸기 위해 String inString에 저장 후
+
+    tolnt() 함수를 사용해 정수로 바꾸어 timeln에 저장한다 */
+# 86 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT_LED\\MQTT_LED.ino"
+    String inString = "";
+    for (int i = 0; i < length; i++)
+    {
+        inString += (char)payload[i];
+    }
+    timeln = inString.toInt();
+}
+
+// mqtt 통신에 지속적으로 접속
+void reconnect()
+{
+    while (!client.connected())
+    {
+        Serial.print("Attempting MQTT connection...");
+
+        // Atempt to connect
+        if (client.connect(clientName))
+        {
+            Serial.println("connected");
+            // Once connectedm publish an announcement...
+            client.publish("inTopic", "Reconnected");
+            // and resubscribe
+            client.subscribe("outTopic");
+        }
+        else
+        {
+            Serial.print("failed, rc=");
+            Serial.print(client.state());
+            Serial.println(" try again in 5 seconds");
+            delay(5000);
+        }
     }
 }
