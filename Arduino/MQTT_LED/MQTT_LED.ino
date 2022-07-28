@@ -2,9 +2,9 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 
-const char *ssid = "jwip";                // wifi name
-const char *password = "01027628569";     // wifi pw
-const char mqtt_server[] = "192.168.0.3"; // mqtt broker server
+const char *ssid = "";                // wifi name
+const char *password = "";     // wifi pw
+const char mqtt_server[] = ""; // mqtt broker server
 const char clientName[] = "010830Client"; // 다름 이름이랑 중복되지 않도록 함
 
 WiFiClient espClient;

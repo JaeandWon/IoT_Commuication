@@ -1,6 +1,7 @@
 # 1 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT_LED\\MQTT_LED.ino"
-# 2 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT_LED\\MQTT_LED.ino" 2
+/*MQTT를 이용하여 LED시간 제어*/
 # 3 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT_LED\\MQTT_LED.ino" 2
+# 4 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT_LED\\MQTT_LED.ino" 2
 
 const char *ssid = "jwip"; // wifi name
 const char *password = "01027628569"; // wifi pw
@@ -85,7 +86,7 @@ void callback(char *topic, byte *payload, unsigned int length)
     /*payload로 들어온 문자를 정수로 바꾸기 위해 String inString에 저장 후
 
     tolnt() 함수를 사용해 정수로 바꾸어 timeln에 저장한다 */
-# 86 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT_LED\\MQTT_LED.ino"
+# 87 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT_LED\\MQTT_LED.ino"
     String inString = "";
     for (int i = 0; i < length; i++)
     {

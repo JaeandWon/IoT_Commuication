@@ -3,8 +3,8 @@ WIFI 연결 및 웹서버 구축 Exmaple
 */
 #include <ESP8266WiFi.h>
 
-const char ssid[] = "jwip";            //와이파이 이름
-const char password[] = "01027628569"; //와이파이 비밀번호
+const char ssid[] = "";            //와이파이 이름
+const char password[] = ""; //와이파이 비밀번호
 
 WiFiServer server(80); // ESP8266.h에는 WiFiServer라는 객체가 있음, 객체를 생성하는 코드 80포트를 open
 

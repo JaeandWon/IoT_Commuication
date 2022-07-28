@@ -2,11 +2,11 @@
 #include <ESP8266WiFi.h>
 
 // Update these with values suitable for your network.
-const char *ssid = "jwip";            // wifi name
-const char *password = "01027628569"; // wifi ow
+const char *ssid = "";            // wifi name
+const char *password = ""; // wifi ow
 
 // mosquitto server address, clientname
-const char *mqtt_server = "192.168.0.3"; // ip addr
+const char *mqtt_server = ""; // ip addr
 const char *clientName = "D1miniClientA";
 
 WiFiClient espClient;

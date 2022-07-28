@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #line 1 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT_LED\\MQTT_LED.ino"
+/*MQTT를 이용하여 LED시간 제어*/
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 
@@ -20,11 +21,11 @@ void setup_wifi();
 void callback(char *topic, byte *payload, unsigned int length);
 void reconnect();
 
-#line 21 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT_LED\\MQTT_LED.ino"
+#line 22 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT_LED\\MQTT_LED.ino"
 void setup();
-#line 30 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT_LED\\MQTT_LED.ino"
+#line 31 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT_LED\\MQTT_LED.ino"
 void loop();
-#line 21 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT_LED\\MQTT_LED.ino"
+#line 22 "c:\\Users\\jaewo\\Desktop\\IoT_Commuication\\Arduino\\MQTT_LED\\MQTT_LED.ino"
 void setup()
 {
     pinMode(led, OUTPUT);

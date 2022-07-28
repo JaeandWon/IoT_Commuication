@@ -5,8 +5,8 @@ WIFI를 이용한 LED 제어
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
 
-const char ssid[] = "jwip";
-const char pw[] = "01027628569";
+const char ssid[] = "";
+const char pw[] = "";
 
 ESP8266WebServer server(80);
 

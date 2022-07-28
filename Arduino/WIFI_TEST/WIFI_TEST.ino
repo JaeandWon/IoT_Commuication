@@ -1,7 +1,7 @@
 #include <ESP8266WiFi.h>
 
-const char wifi_id[] = "jwip";
-const char pw[] = "01027628569";
+const char wifi_id[] = "";
+const char pw[] = "";
 
 WiFiServer server(80);
 
