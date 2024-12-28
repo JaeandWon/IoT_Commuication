@@ -1,4 +1,4 @@
-# esp32_mqttprotocol
+# esp32_mqtt protocol
 
 ## Dev Environment
 MCU : esp32 (used in Arduino IDE)
